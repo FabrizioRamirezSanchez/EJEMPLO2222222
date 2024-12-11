@@ -11,9 +11,9 @@ const app = express();
 
 // Configuración de la conexión a la base de datos
 const pool = mysql.createPool({
-    host: 'database-1.cb8iya80i44y.us-east-1.rds.amazonaws.com', // Host de la base de datos
+    host: 'admin.cba02oi88fu1.us-east-1.rds.amazonaws.com', // Host de la base de datos
     user: 'admin', // Usuario de la base de datos
-    password: 'casas12345', // Contraseña de la base de datos
+    password: 'admin123', // Contraseña de la base de datos
     database: 'formulario_db', // Nombre de la base de datos
     waitForConnections: true,
     connectionLimit: 10,
