@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleRegister(e) {
         e.preventDefault();
-        const fullName = document.getElementById("fullName").value;
+        const nombre_completo = document.getElementById("nombre_completo").value;
         const email = document.getElementById("email").value;
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ fullName, email, username, password }), // Verifica que estos valores no estén vacíos
+            body: JSON.stringify({ nombre_completo, email, username, password }), // Verifica que estos valores no estén vacíos
         })
         .then(response => response.json())
         .then(data => {
@@ -120,3 +120,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     anchoPage();
 });
+
+// chau
