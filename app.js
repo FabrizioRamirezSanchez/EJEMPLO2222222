@@ -91,9 +91,9 @@ app.post('/login', (req, res) => {
 
 // Ruta de registro
 app.post('/register', (req, res) => {
-    const { fullName, email, username, password } = req.body;
+    const { nombre_completo, email, username, password } = req.body;
 
-    if (!username || !password || !email || !fullName) {
+    if (!username || !password || !email || !nombre_completo) {
         return res.status(400).json({ success: false, message: 'Todos los campos son requeridos' });
     }
 
@@ -111,7 +111,7 @@ app.post('/register', (req, res) => {
 
         // Si no existe, proceder con el registro
         const insertQuery = 'INSERT INTO usuarios (nombre_completo, email, username, password) VALUES (?, ?, ?, ?)';
-        pool.query(insertQuery, [fullName, email, username, password], (insertErr) => {
+        pool.query(insertQuery, [nombre_completo, email, username, password], (insertErr) => {
             if (insertErr) {
                 console.error('Error al registrar usuario:', insertErr.message);
                 return res.status(500).json({ success: false, message: 'Error al registrar usuario' });

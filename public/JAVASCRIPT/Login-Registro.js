@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = formLogin.querySelector('input[type="text"]').value;
         const password = formLogin.querySelector('input[type="password"]').value;
     
-        fetch('http://localhost:3000/login', {
+        fetch('http://52.205.166.113:3000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleRegister(e) {
         e.preventDefault();
-        const nombre_completo = document.getElementById("nombre_completo").value;
+        const nombre_completo = document.getElementById("fullName").value;
         const email = document.getElementById("email").value;
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        fetch('http://localhost:3000/register', {
+        fetch('http://52.205.166.113:3000/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -120,5 +120,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     anchoPage();
 });
-
-// chau

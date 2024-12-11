@@ -1,6 +1,6 @@
 // Ruta para registrar un nuevo usuario
 app.post('/register', (req, res) => {
-    const { fullName, email, username, password } = req.body;
+    const { nombre_completo, email, username, password } = req.body;
 
     // Verificar si el usuario o correo ya existen
     const checkQuery = 'SELECT * FROM usuarios WHERE username = ? OR email = ?';
@@ -17,7 +17,7 @@ app.post('/register', (req, res) => {
         // Si no existe, proceder con el registro
         const insertQuery = 'INSERT INTO usuarios (nombre_completo, email, username, password) VALUES (?, ?, ?, ?)';
         
-        connection.query(insertQuery, [fullName, email, username, password], (insertErr, insertResults) => {
+        connection.query(insertQuery, [nombre_completo, email, username, password], (insertErr, insertResults) => {
             if (insertErr) {
                 // Aquí agregamos más detalles del error como el código y mensaje
                 console.error('Error al registrar usuario:', insertErr.code); // Agregar más detalles del error
