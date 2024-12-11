@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = formLogin.querySelector('input[type="text"]').value;
         const password = formLogin.querySelector('input[type="password"]').value;
     
-        fetch('http://52.205.166.113:3000/login', {
+        fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        fetch('http://52.205.166.113:3000/register', {
+        fetch('http://localhost:3000/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
