@@ -1,0 +1,731 @@
+/* Variables globales */
+:root {
+    --primary-color: #01579b;
+    --secondary-color: #e0f7fa;
+    --accent-color: #2fcdfd;
+    --text-color: #333;
+    --white: #fff;
+    --transition: all 0.3s ease;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*DEGRADADO DEL BODY CON LA PALETA DE COLORES*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #85d8ce, #42a5f5, #5c6bc0);
+    /* Puedes cambiar los colores para ajustar el efecto */
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo animado con un efecto de cambio de color */
+@keyframes colorShift {
+    0% {
+        background: #85d8af;
+    }
+
+    50% {
+        background: #42a5f5;
+    }
+
+    100% {
+        background: #5c6bc0;
+    }
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(1, 87, 155, 0.9);
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-bottom: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    top: 120px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    /* Cambié el color de la letra a blanco */
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+.navbar ul li a:hover {
+    background-color: white;
+    color: #0150b6;
+}
+
+/* Logo de MIZU */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 3;
+    /* El logo estará encima de la barra de navegación */
+}
+
+/* Imagen de encabezado unida a la barra de navegación */
+.imagen-head img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* La imagen ocupará toda la altura de la pantalla */
+    object-fit: cover;
+    /* Asegura que la imagen cubra todo el área */
+    z-index: 1;
+    /* La imagen estará detrás de otros elementos */
+    opacity: 0.7;
+    /* Ajusta la opacidad para que se mezcle con el contenido */
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    /* Toma toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Asegura que el contenido esté en la parte superior */
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(120, 191, 248, 0.842), rgba(33, 46, 233, 0.829));
+    /* Degradado */
+}
+
+/* Estilo del título */
+.texto-titulo {
+    top: 20px;
+    text-align: center;
+    background: #0483a334;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.texto-titulo h2 {
+    color: #01579b;
+    /* Azul oscuro */
+    font-size: 2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    margin: 10px;
+}
+
+.texto-titulo h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #0445997a;
+    /* Blanco */
+    margin: 10px auto 0;
+}
+
+/* Estilo para las cartas */
+.content {
+    display: flex;
+    justify-content: center;
+    /* Centrar horizontalmente */
+    flex-wrap: wrap;
+    /* Permitir que las cartas se envuelvan */
+    padding: 10px;
+    max-width: 1200px;
+    /* Limitar el ancho máximo */
+    margin: 0 auto;
+    /* Centrar el contenedor */
+}
+
+.card {
+    flex-grow: 1;
+    /* Las cartas ocuparán el espacio disponible */
+    width: 300px;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(220, 237, 247, 0.95);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+    opacity: 0;
+    transform: translateY(20px);
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Asegura que la imagen se ajuste a las dimensiones sin deformarse */
+}
+
+.card .objetivo1 {
+    padding: 15px;
+    text-align: center;
+
+}
+
+.card .objetivo1 p {
+    line-height: 1.5;
+    color: #6a6a6a;
+}
+
+.card .objetivo1 h3 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+/* Efecto de visibilidad de la carta */
+.card.visible {
+    opacity: 1;
+    /* Se hace visible */
+    transform: translateY(0);
+    /* Regresa a su posición original */
+}
+
+.card.visible:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+#contador-fondos {
+    display: flex;
+    justify-content: center;
+    /* Centra el contenido */
+    align-items: center;
+    /* Alinea verticalmente el contenido */
+    padding: 15px 25px;
+    /* Espaciado alrededor del texto */
+    margin: 20px auto;
+    /* Centra el contenedor en la página */
+    font-size: 1.5em;
+    /* Tamaño de fuente más grande */
+    color: #0a4db1;
+    font-weight: bold;
+    /* Texto en negrita */
+    width: fit-content;
+    /* Tamaño ajustado al contenido */
+}
+
+#contador-fondos span {
+    color: #1b3999;
+    /* Color del número */
+    font-size: 1em;
+    /* Tamaño del número más grande */
+    font-weight: bold;
+}
+
+/* PRELOADER */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+body.loaded #preloader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#preloader .drop-container {
+    position: sticky;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.drop {
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100% 5% 100% 100%;
+    transform: rotate(-45deg);
+    background: #0053bf;
+    animation: drip 2s forwards;
+}
+
+/*linea celeste de arriba*/
+
+#scroll-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 9px;
+    /* El grosor de la línea */
+    width: 0;
+    /* La anchura inicial será 0 */
+    background-color: rgb(0, 140, 255);
+    /* Color de la línea */
+    z-index: 1000;
+    /* Asegura que esté sobre otros elementos */
+    transition: width 0.1s ease-out;
+    /* Suaviza la animación */
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    /* Distancia desde el fondo */
+    right: 20px;
+    /* Distancia desde la derecha */
+    display: none;
+    /* Ocultar por defecto */
+    background-color: #007bff;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interno */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    z-index: 1000;
+    /* Asegúrate de que esté por encima de otros elementos */
+    transition: display 0.3s;
+    /* Añade una transición */
+}
+
+#backToTopBtn.visible {
+    display: block;
+    /* Mostrar cuando tenga la clase 'visible' */
+}
+
+
+@keyframes drip {
+    45% {
+        top: 0;
+        border-radius: 100% 5% 100% 100%;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+        border-radius: 100%;
+    }
+}
+
+/* TEXTO APARECIENDO DEL PREDOALER*/
+h1 {
+    color: white;
+    position: absolute;
+    font-size: 1.5em;
+    height: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: appear 1s 1.1s forwards;
+    animation: appear 1s 1.1s forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*TEXTO CARRUCEL*/
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.carousel-item h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.carousel-item p {
+    margin-top: 10px;
+    color: #666;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background-color: rgba(79, 156, 219, 0.562);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 9px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 44, 163, 0.5);
+}
+
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+/*CARTAS DEBAJO DE TEXTO */
+
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card1 {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-back {
+    background-color: #80dffc;
+    display: flex;
+    flex-direction: column;
+    /* Alinea los elementos uno sobre otro */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+    padding: 20px;
+    transform: rotateY(180deg);
+}
+
+.card-back h3 {
+    margin-bottom: 15px;
+    /* Espaciado entre el título y el párrafo */
+    color: #333;
+}
+
+.card-back p {
+    margin: 0;
+    /* Remueve márgenes adicionales */
+    text-align: center;
+    color: #333;
+}
+
+.flipped {
+    /* voltea la carta*/
+    transform: rotateY(180deg);
+}
+
+/* Botón Ver más */
+.toggle-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Contenedor desplegable */
+.expandable-content {
+    display: none;
+    /* Se oculta por defecto hasta que se haga clic en "Ver más" */
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Cuadro adicional del contenedor */
+.additional-box {
+    background-color: #92caff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    /* Centra el cuadro en la página */
+    margin-bottom: 20px;
+}
+
+.additional-box h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.additional-box p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+    /* Espacio entre los párrafos */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+}
+
+@media (max-width: 767px) {
+
+    /* Ajustes para el título */
+    .content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    /* Ajustes para la navegación */
+    .navbar {
+        display: flex;
+        /* Asegura que los elementos se apilen verticalmente */
+        align-items: center;
+        /* Centra los elementos horizontalmente */
+        padding: 1vh;
+    }
+
+    .navbar ul {
+        background-color: rgba(0, 0, 0, 0);
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    /* Efecto hover para los enlaces del menú de navegación */
+    .navbar ul li a {
+        color: white;
+        /* Color inicial del texto */
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 20px;
+        transition: background 0.5s, color 0.5s;
+        /* Añadido para suavizar la transición */
+    }
+
+    .content {
+        flex-direction: column;
+        /* Apila las tarjetas */
+        align-items: center;
+    }
+
+    .card {
+        width: 70%;
+        /* Ocupa todo el ancho */
+    }
+
+    .carousel {
+        position: relative;
+        width: 70%;
+        max-width: 330px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .carousel-item {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .carousel-item h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .carousel-item p {
+        margin-top: 10px;
+        color: #666;
+        font-size: 0.9rem;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        background-color: rgba(79, 156, 219, 0.562);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        transition: background-color 0.3s;
+    }
+
+    .card1 {
+        width: 80%;
+        align-items: center;
+        margin-top: 10vh;
+    }
+
+    .card-inner {
+        width: 80%;
+        height: 80%;
+        margin-left: 20px;
+    }
+
+    .card-back h3 {
+        margin-bottom: 15px;
+        /* Espaciado entre el título y el párrafo */
+        color: #333;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .card-back p {
+        margin: 0;
+        /* Remueve márgenes adicionales */
+        text-align: center;
+        color: #333;
+        font-size: 2.5vh;
+    }
+
+    .additional-box {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 330px;
+        margin: auto;
+        /* Centra el cuadro en la página */
+        margin-bottom: 20px;
+    }
+
+    .additional-box h3 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .additional-box p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 10px;
+        /* Espacio entre los párrafos */
+        text-align: left;
+        /* Alinea el texto a la izquierda */
+    }
+}
+
+/* EL FOOTER */
+footer {
+    background-color: #2255a1;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    margin: 0;
+}

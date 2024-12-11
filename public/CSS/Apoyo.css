@@ -1,0 +1,441 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*DEGRADADO DEL BODY CON LA PALETA DE COLORES*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #85d8ce, #42a5f5, #5c6bc0);
+    /* Puedes cambiar los colores para ajustar el efecto */
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo animado con un efecto de cambio de color */
+@keyframes colorShift {
+    0% {
+        background: #85d8af;
+    }
+
+    50% {
+        background: #42a5f5;
+    }
+
+    100% {
+        background: #5c6bc0;
+    }
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(1, 87, 155, 0.9);
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-bottom: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    top: 120px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    /* Cambié el color de la letra a blanco */
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+.navbar ul li a:hover {
+    background-color: white;
+    color: #0150b6;
+}
+
+/* Logo de MIZU */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 3;
+    /* El logo estará encima de la barra de navegación */
+}
+
+/* Imagen de encabezado unida a la barra de navegación */
+.imagen-head img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* La imagen ocupará toda la altura de la pantalla */
+    object-fit: cover;
+    /* Asegura que la imagen cubra todo el área */
+    z-index: 1;
+    /* La imagen estará detrás de otros elementos */
+    opacity: 0.7;
+    /* Ajusta la opacidad para que se mezcle con el contenido */
+}
+
+
+
+/* Estilo del título */
+.texto-titulo {
+    top: 20px;
+    text-align: center;
+    background: #0483a334;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.texto-titulo h2 {
+    color: #01579b;
+    /* Azul oscuro */
+    font-size: 2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    margin: 10px;
+}
+
+.texto-titulo h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #0445997a;
+    /* Blanco */
+    margin: 10px auto 0;
+}
+
+
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    /* Toma toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Asegura que el contenido esté en la parte superior */
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(120, 191, 248, 0.842), rgba(33, 46, 233, 0.829));
+    /* Degradado */
+}
+
+/* Estilo para las cartas */
+.content {
+    display: flex;
+    justify-content: center;
+    /* Centrar horizontalmente */
+    flex-direction: row;
+    /* Permitir que las cartas se envuelvan */
+    padding: 10px;
+    max-width: 1200px;
+    /* Limitar el ancho máximo */
+    margin: 0 auto;
+    /* Centrar el contenedor */
+}
+
+.card {
+    width: 300px;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+    opacity: 1;
+    /* Inicialmente invisibles */
+    transform: translateY(20px);
+    /* Desplazadas hacia abajo */
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Asegura que la imagen se ajuste a las dimensiones sin deformarse */
+}
+
+.card-cuatro {
+    margin-right: 300px;
+    /* Ajusta el valor según la cantidad de desplazamiento deseado */
+}
+
+.card .apoyo1 {
+    padding: 15px;
+    /* Cambié de .objetivo1 a .apoyo1 para que coincida con tu HTML */
+    text-align: center;
+}
+
+.card .apoyo1 p {
+    line-height: 1.5;
+    color: #6a6a6a;
+}
+
+.card .apoyo1 h3 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+
+/* Efecto de visibilidad de la carta */
+.card.visible {
+    opacity: 1;
+    /* Se hace visible */
+    transform: translateY(0);
+    /* Regresa a su posición original */
+}
+
+.card.visible:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+
+/* Estilo para centrar el botón */
+.boton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.boton a {
+    display: inline-block;
+    width: 200px;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    text-align: center;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.boton a:hover {
+    background-color: #0056b3;
+}
+
+/* EL FOOTER */
+footer {
+    background-color: #2255a1;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* PRELOADER */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+body.loaded #preloader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#preloader .drop-container {
+    position: sticky;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.drop {
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100% 5% 100% 100%;
+    transform: rotate(-45deg);
+    background: #0053bf;
+    animation: drip 1s forwards;
+}
+
+@keyframes drip {
+    45% {
+        top: 0;
+        border-radius: 100% 5% 100% 100%;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+        border-radius: 100%;
+    }
+}
+
+/* TEXTO APARECIENDO */
+h1 {
+    color: white;
+    position: absolute;
+    font-size: 1.5em;
+    height: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: appear 2s 2.5s forwards;
+    animation: appear 2s 2.5s forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    /* Distancia desde el fondo */
+    right: 20px;
+    /* Distancia desde la derecha */
+    display: none;
+    /* Ocultar por defecto */
+    background-color: #007bff;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interno */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    z-index: 1000;
+    /* Asegúrate de que esté por encima de otros elementos */
+    transition: display 0.3s;
+    /* Añade una transición */
+}
+
+#backToTopBtn.visible {
+    display: block;
+    /* Mostrar cuando tenga la clase 'visible' */
+}
+
+@media (max-width: 767px) {
+
+    /* Ajustes para el título */
+    .content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    /* Ajustes para la navegación */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        /* Asegura que los elementos se apilen verticalmente */
+        align-items: center;
+        /* Centra los elementos horizontalmente */
+        padding: 1vh;
+    }
+
+    .navbar ul {
+        background-color: rgba(0, 0, 0, 0);
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    /* Efecto hover para los enlaces del menú de navegación */
+    .navbar ul li a {
+        color: white;
+        /* Color inicial del texto */
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 20px;
+    }
+
+    /* Efecto hover */
+    .navbar ul li a:hover {
+        background-color: white;
+        /* Color de fondo al pasar el cursor */
+        color: #0150b6;
+        /* Color del texto al pasar el cursor */
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        /* Agrega espacio entre los enlaces para que no se vean tan juntos */
+    }
+
+    .content {
+        flex-direction: column;
+        /* Apila las tarjetas */
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        /* Ocupa todo el ancho */
+    }
+
+}

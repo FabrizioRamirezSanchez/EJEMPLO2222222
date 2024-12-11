@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBJETIVO</title>
+  <link rel="stylesheet" href="../CSS/Objetivo.css">
+  <script src="../JAVASCRIPT/Objetivo.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Botón volver arriba -->
+  <button id="backToTopBtn" aria-label="Volver arriba">⬆️</button>
+
+  <!-- Preloader -->
+
+  <div id="preloader">
+    <div class="drop-container">
+      <div class="drop"></div>
+    </div>
+    <h1>MIZU</h1>
+  </div>
+
+  <img class="logo" src="../ZMultimedia/Imagenes/Logo/MIYAZUKU_Logo.png" alt="Logo Mizu">
+
+  <div class="banner">
+    <div id="scroll-line"></div>
+
+    <div class="navbar">
+      <ul>
+        <li><a href="../index.html">INICIO</a></li>
+        <li><a href="Nosotros.html">NOSOTROS</a></li>
+        <li><a href="Objetivo.html">OBJETIVO</a></li>
+        <li><a href="Apoyo.html">APOYO</a></li>
+      </ul>
+    </div>
+
+    <div class="imagen-head">
+      <img src="../ZMultimedia/Imagenes/manoagua.png" alt="IMAGEN DEL ENCABEZADO">
+    </div>
+  </div>
+
+  <section>
+    <div class="texto-titulo">
+      <h2>OBJETIVOS DE LA EMPRESA</h2>
+    </div>
+
+    <div class="content">
+
+      <div class="card">
+        <figure>
+          <img src="../ZMultimedia/Imagenes/Logo/MIYAZUKU_Logo.png">
+        </figure>
+
+        <div class="objetivo1">
+          <h3> Lograr el acceso universal y equitativo al agua potable</h3>
+          <p>Busca asegurar que todas las personas, sin importar su ubicación o nivel económico, puedan tener
+            acceso a agua potable de manera segura.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <figure>
+          <img src="../ZMultimedia/Imagenes/bañarse.png">
+        </figure>
+
+        <div class="objetivo1">
+          <h3> Lograr el acceso a servicios de saneamiento e higiene adecuados y equitativos para todos</h3>
+          <p>Organizaremos instalaciones de saneamiento adecuadas, como baños y sistemas de gestión de aguas
+            residuales, que mejoren la salud pública y la dignidad de las personas.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <figure>
+          <img src="../ZMultimedia/Imagenes/calidad.png">
+        </figure>
+
+        <div class="objetivo1">
+          <h3> Mejorar la calidad del agua</h3>
+          <p> Gestiónamos de la calidad del agua, reduciendo la contaminación y mejorando el tratamiento de
+            aguas residuales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--CARRUCEL-->
+
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-item">
+        <h2>OBJETIVO PARA EL 2030</h2>
+        <p>De aquí a 2030, lograr el acceso universal y equitativo al agua potable <br>
+          a un precio asequible para todos.</p>
+      </div>
+      <div class="carousel-item">
+        <h2>OBJETIVO PARA EL 2040</h2>
+        <p> Implementar la gestión integrada de los recursos hídricos a todos los niveles, incluso mediante la
+          cooperación transfronteriza, según proceda.</p>
+      </div>
+    </div>
+
+    <div class="class=" carousel-btn"">
+      <button class="carousel-btn prev" onclick="changeSlide(-1)"> ❮ </button>
+      <button class="carousel-btn next" onclick="changeSlide(1)"> ❯ </button>
+    </div>
+  </div>
+
+  <!--CARTAS VOLTEABLES-->
+
+  <div class="card-container">
+    <div class="card1" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../ZMultimedia/Imagenes/potable.png" alt="Imagen 1">
+        </div>
+        <div class="card-back">
+          <h3>Agua potable</h3>
+          <p>EL ODS 6 se encarga de limpiar el agua para todo el mundo hasta el punto de ser potable.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card1" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../ZMultimedia/Imagenes/agricultura.png" alt="Imagen 2">
+        </div>
+        <div class="card-back">
+          <h3>Agricultura</h3>
+          <p>El ODS 6 fomenta técnicas de riego más eficientes en la agricultura.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card1" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../ZMultimedia/Imagenes/manos.jpg" alt="Imagen 3">
+        </div>
+        <div class="card-back">
+          <h3>Higiene</h3>
+          <p>Al promover la educacion de la higiene, contribuimos en prevenir enfermedades.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--FONDOs RECAUDADOs-->
+
+  <div id="contador-fondos">
+    <p>Fondos Recaudados: <span id="contadorfondos">0</span></p>
+  </div>
+
+  <!--VER MAS-->
+
+  <div class="expandable-container">
+    <button class="toggle-btn" onclick="toggleExpandable()">Ver más</button>
+
+    <div class="expandable-content" id="expandableContent">
+      <div class="additional-box">
+        <h3>¿Como puedes aportar?</h3>
+        <p>1.Aprender sobre las dificultades para acceder a agua limpia y saneamiento</p>
+        <p>2.Evitar el desecho de sustancias quimicas y toxicass</p>
+        <p>3.Evitar el desperdicio de agua</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Equipo 11 | Proyecto ODS 6</p>
+  </footer>
+
+</body>
+
+
+</html>

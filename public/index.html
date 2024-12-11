@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Principal_Inicio</title>
+    <link rel="stylesheet" href="CSS/Inicio.css">
+    <script src="JAVASCRIPT/Inicio.js"></script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="drop-container">
+            <div class="drop"></div>
+        </div>
+        <h1>MIZU</h1>
+    </div>
+
+    <!-- Logo de MIZU -->
+    <img class="logo" src="ZMultimedia/Imagenes/Logo/MIYAZUKU_Logo.png" alt="Logo MIZU">
+    <!-- Banner con video de fondo -->
+    <div class="banner">
+
+        <!-- Video de fondo -->
+        <video autoplay loop muted preload="auto" playsinline>
+            <source src="ZMultimedia/Videos/VideoInicio.mp4" type="video/mp4">
+        </video>
+
+
+        <!-- Barra de navegación -->
+        <div class="navbar">
+            <!-- Menú de navegación -->
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="HTML/Nosotros.html">NOSOTROS</a></li>
+                <li><a href="HTML/Objetivo.html">OBJETIVO</a></li>
+                <li><a href="HTML/Apoyo.html">APOYO</a></li>
+            </ul>
+        </div>
+
+        <!-- Contenido principal del banner -->
+        <div class="content">
+            <h2>AYUDA AL MUNDO</h2>
+            <div>
+                <button type="button" onclick="window.location.href='HTML/explorar.html'">EXPLORA LAS ODS</button>
+            </div>
+        </div>
+
+        <!-- Sección del Calendario con Fechas-->
+        <section class="message-section">
+            <div class="message-container">
+                <div id="message" class="message">
+                    <div id="eventoHoy" class="evento">
+                        <h3>🎉 Evento de Hoy 🎉</h3>
+                        <p id="eventoHoyMensaje">Cargando evento...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
