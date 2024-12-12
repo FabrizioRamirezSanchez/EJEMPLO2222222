@@ -1,0 +1,361 @@
+/* Variables globales */
+:root {
+    --primary-color: #01579b;
+    --secondary-color: #e0f7fa;
+    --accent-color: #2fcdfd;
+    --text-color: #333;
+    --white: #fff;
+    --transition: all 0.3s ease;
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #85d8ce, #42a5f5, #5c6bc0);
+    /* Puedes cambiar los colores para ajustar el efecto */
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo animado con un efecto de cambio de color */
+@keyframes colorShift {
+    0% { background: #85d8af; }
+    50% { background: #42a5f5; }
+    100% { background: #5c6bc0; }
+}
+/* BANNER */
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* Evita que el contenido se desborde */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner video {
+    position: absolute;
+    top: 50%;
+    /* Centro verticalmente */
+    left: 50%;
+    /* Centro horizontalmente */
+    width: 100%;
+    /* Asegura que cubra todo el ancho */
+    height: 100%;
+    /* Asegura que cubra toda la altura */
+    object-fit: cover;
+    /* Mantiene la proporción del video */
+    transform: translate(-50%, -50%);
+    /* Centra el video */
+    z-index: -1;
+    /* Envía el video detrás del contenido */
+}
+
+.banner {
+    background: linear-gradient(to right, rgba(120, 191, 248, 0.7), rgba(0, 7, 102, 0.568));
+    /* Degradado semitransparente */
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 3;
+    transition: var(--transition);
+    cursor: pointer;
+    display: block;
+    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0));
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(1, 87, 155, 0.9);
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-bottom: 350px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Ajusta este valor para mover la barra más abajo */
+    top: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+/* Efecto hover para los enlaces del menú de navegación */
+.navbar ul li a {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+/* Efecto hover */
+.navbar ul li a:hover {
+    background-color: white;
+    /* Color de fondo al pasar el cursor */
+    color: #0150b6;
+    /* Color del texto al pasar el cursor */
+}
+
+.navbar ul li a.active {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* CONTENIDO */
+.content {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    font-size: 100px;
+    font-weight: 700;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* BOTONES */
+button {
+    width: 200px;
+    padding: 10px;
+    margin: 15px auto;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.5s, color 0.5s;
+}
+
+button:hover {
+    background-color: white;
+    color: #0150b6;
+}
+
+/* PRELOADER */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s;
+    /* Reducimos el tiempo de desvanecimiento */
+}
+
+body.loaded #preloader {
+    opacity: 0;
+    /* Desaparece el preloader al final */
+    pointer-events: none;
+    /* Permite hacer clic en la página */
+}
+
+#preloader .drop-container {
+    position: sticky;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.drop {
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100% 5% 100% 100%;
+    transform: rotate(-45deg);
+    background: #0053bf;
+    animation: drip 2s forwards;
+}
+
+@keyframes drip {
+    45% {
+        top: 0;
+        border-radius: 100% 5% 100% 100%;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+        border-radius: 100%;
+    }
+}
+
+/* TEXTO APARECIENDO */
+h1 {
+
+    color: white;
+    position: absolute;
+    font-size: 1.5em;
+    height: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: appear 2s 2.5s forwards;
+    animation: appear 2s 2.5s forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+
+    /* Ajustes para el título */
+    .content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    /* Ajustes para la navegación */
+    .navbar {
+        top: 30px;
+        display: flex;
+        flex-direction: column;
+        /* Asegura que los elementos se apilen verticalmente */
+        align-items: center;
+        /* Centra los elementos horizontalmente */
+        padding: 1px;
+    }
+
+    .navbar ul {
+        background-color: rgba(0, 0, 0, 0);
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    /* Efecto hover para los enlaces del menú de navegación */
+    .navbar ul li a {
+        color: white;
+        /* Color inicial del texto */
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 20px;
+        transition: background 0.5s, color 0.5s;
+        /* Añadido para suavizar la transición */
+    }
+
+    /* Efecto hover */
+    .navbar ul li a:hover {
+        background-color: white;
+        /* Color de fondo al pasar el cursor */
+        color: #0150b6;
+        /* Color del texto al pasar el cursor */
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        /* Agrega espacio entre los enlaces para que no se vean tan juntos */
+    }
+
+    #backToTopBtn {
+        z-index: +3;
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #2fcdfd;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+/*BOTON PARA ARRIBA*/
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2fcdfd;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CALENDARIO */
+.message-section {
+    position: fixed; /* Fija la sección en la ventana */
+    bottom: 0; /* Alinea la sección a la parte inferior */
+    left: 0; /* Alinea al lado izquierdo */
+    width: 100%; /* Hace que ocupe todo el ancho de la ventana */
+    background-color: #0150b6; /* Fondo semi-transparente */
+    color: white; /* Texto en blanco */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+    z-index: 1000; /* Coloca la sección por encima de otros elementos */
+}
+
+.message-container {
+    text-align: center; /* Centra el contenido */
+}
+
+.evento h3 {
+    margin: 0;
+    font-size: 18px; /* Tamaño del título */
+}
+
+.evento p {
+    margin: 5px 0 0; /* Margen del párrafo */
+    font-size: 14px; /* Tamaño del texto */
+}
