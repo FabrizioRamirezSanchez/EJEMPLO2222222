@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Donar.css">
+    <script src="../JAVASCRIPT/Donar.js"></script>
+    <title>Formulario Donación</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <img class="logo1"  src="../ZMultimedia/Imagenes/Logo/MIYAZUKU_Logo.png" width="100px" height="100px">
+    </div>
+
+    <div class="contenido">
+        <h1>Donar Ahora</h1>
+
+        <div>
+            <form id="formularioDonacion">
+                <div class="form-group">
+                    <input type="text" id="nombre" required placeholder=" ">
+                    <label for="nombre">Nombre:</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" id="telefono" required placeholder=" ">
+                    <label for="telefono">Número de Teléfono:</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" id="email" required placeholder=" ">
+                    <label for="email">Correo Electrónico:</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" id="donacion" required placeholder=" ">
+                    <label for="donacion">Donativa:</label>
+                </div>
+                <br>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="aceptar" required>
+                    <label for="aceptar">He leído y acepto las condiciones</label>
+                </div>
+                <br>
+                <button type="button" id="botonDonar">Donar</button>
+                <p class="warnings" id="warnings"></p>
+                <br>
+            </form>
+        </div>
+
+        <div class="boton">
+            <a href="../index.html">REGRESAR A INICIO</a>
+        </div>
+
+</body>
+
+</html>

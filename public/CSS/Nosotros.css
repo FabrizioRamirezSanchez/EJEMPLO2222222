@@ -1,0 +1,384 @@
+/* Variables globales */
+:root {
+    --primary-color: #01579b;
+    --secondary-color: #e0f7fa;
+    --accent-color: #2fcdfd;
+    --text-color: #333;
+    --white: #fff;
+    --transition: all 0.3s ease;
+}
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*DEGRADADO DEL BODY CON LA PALETA DE COLORES*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #85d8ce, #42a5f5, #5c6bc0);
+    /* Puedes cambiar los colores para ajustar el efecto */
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo animado con un efecto de cambio de color */
+@keyframes colorShift {
+    0% { background: #85d8af; }
+    50% { background: #42a5f5; }
+    100% { background: #5c6bc0; }
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(1, 87, 155, 0.9);
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-bottom: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    top: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white; /* Cambié el color de la letra a blanco */
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+.navbar ul li a:hover {
+    background-color: white;
+    color: #0150b6;
+}
+
+.navbar ul li a.active {
+    background-color: white;
+    color: #0150b6;
+}
+
+/* Logo de MIZU */
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 3;
+    transition: var(--transition);
+    cursor: pointer;
+    display: block;
+    filter: drop-shadow(0px 0px 20px rgba(7, 15, 131, 0.562));
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(120, 212, 248, 0.842), rgba(18, 83, 223, 0.767));
+    background: transparent;
+}
+
+/* Imagen del encabezado */
+.imagen-head img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* Contenido principal */
+.contenido {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    margin-top: -400px;
+}
+
+/* Sección Quiénes Somos */
+.quienes-somos {
+    background-color: rgba(220, 237, 247, 0.95);
+    margin: 2rem auto;
+    padding: 3rem;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #8bd5f7;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    
+}
+
+.info-card {
+    background: rgb(158, 255, 255);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Sección Nuestro Impacto */
+.nuestro-impacto {
+    background-color: #8bd5f7;
+    margin: 2rem auto;
+    padding: 3rem;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.impact-item {
+    text-align: center;
+}
+
+.impact-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.impact-text {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/*BOTON PARA UNIRSE AL CAMBIO*/
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #074b79;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Scroll Line */
+#scroll-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 9px;
+    width: 0;
+    background-color: rgb(0, 140, 255);
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+body.loaded #preloader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#preloader .drop-container {
+    position: sticky;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.drop {
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100% 5% 100% 100%;
+    transform: rotate(-45deg);
+    background: #0053bf;
+    animation: drip 2s forwards;
+}
+
+@keyframes drip {
+    45% {
+        top: 0;
+        border-radius: 100% 5% 100% 100%;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+        border-radius: 100%;
+    }
+}
+
+/* Texto Apareciendo */
+h1 {
+    color: white;
+    position: absolute;
+    font-size: 1.5em;
+    height: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: appear 2s 2.5s forwards;
+    animation: appear 2s 2.5s forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    display: none; /* Ocultar por defecto */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    transition: display 0.3s; /* Añade una transición */
+}
+
+#backToTopBtn.visible {
+    display: block; /* Mostrar cuando tenga la clase 'visible' */
+}
+
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .navbar {
+        top: 20px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar ul {
+        text-align: center;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+        padding: 10px 20px;
+        transition: background 0.5s, color 0.5s;
+    }
+
+    .navbar ul li a:hover {
+        background-color: white;
+        color: #0150b6;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    #backToTopBtn {
+        background-color: #2fcdfd;
+    }
+}
