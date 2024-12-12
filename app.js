@@ -4,7 +4,11 @@ const mysql = require('mysql2');
 const path = require('path');
 const cors = require('cors');
 
+<<<<<<< HEAD
 const HOST = '54.162.173.97'; //IP PUBLICA
+=======
+const HOST = '3.211.234.72'; //IP PUBLICA
+>>>>>>> 5472e896f0c006c958ff2bae4cfff13682592a7e
 const PORT = 3000;
 
 const app = express();
